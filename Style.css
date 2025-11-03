@@ -4,6 +4,8 @@ nav{
   display: grid;
   grid-template-columns: 40% 60%;
   align-items: center;
+  position: fixed;
+  width: 100%;
 }
 
 nav ul{
@@ -36,10 +38,6 @@ nav a{
 }
 
 
-body{
-  background-color: #365b6d;
-  margin: 0px;
-}
 
 .logo {
   font-family: "Ewert", serif;
@@ -48,4 +46,71 @@ body{
   color: black;
 }
 
+.Accueil {
 
+  display: grid;
+  grid-template-columns: 40% 50%;
+  margin-bottom: 200px;
+  padding-top: 50px;
+  
+  
+}
+
+
+.Accueil img{
+  width: 100%;
+  max-width: 100%;
+  margin: 20px;
+  border-radius: 25px;
+  box-shadow: 20px 20px 20px black;
+
+}
+
+
+.Accueil p{
+  padding-left: 50px;
+}
+
+
+.Accueil h1{
+  padding-left: 50px;
+}
+
+
+
+
+.Projects{
+  display: grid;
+  grid-template-rows: repeat(3,fr);
+  margin: 20px;
+
+}
+
+
+.projects div{
+  height: 20px;
+  width: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body{
+  background-color: #365b6d;
+  margin: 0px;
+}
