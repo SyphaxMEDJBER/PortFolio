@@ -8,6 +8,8 @@ nav{
   width: 100%;
 }
 
+
+
 nav ul{
   display: grid;
   grid-template-columns: repeat(4,auto);
@@ -27,15 +29,11 @@ nav a{
 
 }
 
-
-
-.logo{
-  color: white;
-  font-family:"Georgia",serif;
-  font-size: 1.5em;
-  padding-left: 20px;
-  margin: 0%;
+nav a:hover{
+  color: rgb(0, 0, 0);
 }
+
+
 
 
 
@@ -43,14 +41,17 @@ nav a{
   font-family: "Ewert", serif;
   font-weight: 400;
   font-style: normal;
+  font-size: 1.5em;
   color: black;
+  padding-left: 20px;
+  margin: 0%;
 }
 
 .Accueil {
 
   display: grid;
   grid-template-columns: 40% 50%;
-  margin-bottom: 200px;
+  margin-bottom: 100px;
   padding-top: 50px;
   
   
@@ -79,18 +80,82 @@ nav a{
 
 
 
-.Projects{
+.Projects {
   display: grid;
-  grid-template-rows: repeat(3,fr);
+  grid-template-columns: 33% 33% 33%;
   margin: 20px;
+  margin-bottom: 100px;
+  
+
+}
+
+.Projects h3{
+  text-align: center;
 
 }
 
 
-.projects div{
-  height: 20px;
-  width: 20px;
+.Projects div img{
+  height: 200px;
+  width: 200px;
+  
 }
+
+
+.Projects div p{
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+
+h1,h5{
+  margin-left: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.Project-card{
+  /* box-shadow:20px 20px 20px black ; */
+  border-radius: 10px;
+  margin-right: 10px;
+  background-color: rgb(96, 140, 170);
+  border: 2px solid black;
+  transition: transform 0.3s linear, box-shadow 0.3s linear;
+ 
+  
+
+  
+}
+
+
+.Project-card:hover{
+  transform: scale(1.1);
+  box-shadow: 20px 20px 20px black;
+
+
+}
+
+
+
+
+.Project-card img{
+  margin-left: 5%;
+  margin-right: 5%;
+  border-radius: 10px;
+
+
+}
+
 
 
 
@@ -114,3 +179,146 @@ body{
   background-color: #365b6d;
   margin: 0px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+.Skills{
+  margin-left: 20px;
+
+}
+
+
+.Skills li{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 5px;
+}
+
+
+span{
+  /* pour fixer la taille de span pour que toute les bares soient alignées verticalement  */
+  width:77px ;
+  font-weight: bolder;
+  
+}
+
+
+.bare{
+  border: 3px solid rgb(10, 1, 11);
+  border-radius: 5px;
+  height: 10px;
+  width: 100px;
+}
+
+
+.nvJava{
+  height: 10px;
+  width: 70%;
+  background-color: #39FF14;
+  border-radius: 5px;
+
+}
+
+
+.nvC{
+  height: 10px;
+  width: 55%;
+  background-color: #39FF14;
+  border-radius: 5px;
+}
+
+
+
+.nvPython{
+  height: 10px;
+  width: 25%;
+  background-color: #39FF14;
+  border-radius: 5px;
+
+}
+
+.nvHtmlCss{
+  height: 10px;
+  width: 70%;
+  background-color: #39FF14;
+  border-radius: 5px;
+}
+
+.nvJs{
+  height: 10px;
+  width: 60%;
+  background-color: #39FF14;
+  border-radius: 5px;
+}
+
+
+.nvJulia{
+  height: 10px;
+  width: 25%;
+  background-color: #39FF14;
+  border-radius: 5px;
+}
+
+
+
+
+.nvReact{
+  height: 10px;
+  width: 5%;
+  background-color: #39FF14;
+  border-radius: 5px;
+}
+
+
+.nvTailwind{
+  height: 10px;
+  width: 5%;
+  background-color: #39FF14;
+  border-radius: 5px;
+}
+
+
+.nvSpringboot{
+  height: 10px;
+  width: 5%;
+  background-color: #39FF14;
+  border-radius: 5px;
+}
+
+
+.nvYii{
+  height: 10px;
+  width: 15%;
+  background-color: #39FF14;
+  border-radius: 5px;
+}
+
+
+.nvRes{
+  height: 10px;
+  width: 75%;
+  background-color: #39FF14;
+  border-radius: 5px;
+}
+
+
+.nvAlgo{
+  height: 10px;
+  width: 70%;
+  background-color: #39FF14;
+  border-radius: 5px;
+}
+
+
