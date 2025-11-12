@@ -81,11 +81,17 @@ nav a:hover{
 
 
 .Projects {
-  display: grid;
-  grid-template-columns: 33% 33% 33%;
+  /* display: grid;
+  grid-template-columns: 33% 33% 33%; */
   margin: 20px;
   margin-bottom: 100px;
   
+
+}
+
+.proj{
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
 
 }
 
@@ -131,7 +137,6 @@ h1,h5{
   background-color: rgb(96, 140, 170);
   border: 2px solid black;
   transition: transform 0.3s linear, box-shadow 0.3s linear;
- 
   
 
   
@@ -322,3 +327,76 @@ span{
 }
 
 
+.nvGit{
+  height: 10px;
+  width: 65%;
+  background-color: #39FF14;
+  border-radius: 5px;
+}
+
+
+
+.nvFr{
+  height: 10px;
+  width: 85%;
+  background-color: #39FF14;
+  border-radius: 5px;
+}
+
+
+
+.nvAng{
+  height: 10px;
+  width: 50%;
+  background-color: #39FF14;
+  border-radius: 5px;
+}
+
+
+.comp{
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  grid-template-rows: auto;
+}
+
+
+.comp li{
+  margin: 30px;
+  font-weight: bolder;
+}
+
+
+
+.skil1{
+  margin-top: 60px;
+  
+  
+}
+
+
+.skil2{
+  margin-top: 60px;
+  
+}
+
+
+.skil3{
+  margin-top: 60px;
+  
+}
+
+
+.Skills h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  padding-left: 12px;
+  border-left: 4px solid #060900;
+}
+
+
+
+.titre{
+  margin-left: 0;
+  padding-left: 12px;
+  border-left: 10px solid black;
+}
