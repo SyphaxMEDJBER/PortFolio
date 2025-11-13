@@ -62,8 +62,9 @@ nav a:hover{
   width: 100%;
   max-width: 100%;
   margin: 20px;
-  border-radius: 25px;
-  box-shadow: 20px 20px 20px black;
+  border-radius: 100px;
+  /*
+  box-shadow: 20px 20px 20px black; */
 
 }
 
@@ -118,6 +119,10 @@ h1,h5{
   margin-left: 20px;
 }
 
+
+.liste-contact{
+  padding-left:  40px; ;
+}
 
 
 
@@ -398,5 +403,20 @@ span{
 .titre{
   margin-left: 0;
   padding-left: 12px;
-  border-left: 10px solid black;
+  border-left: 10px solid rgb(0, 0, 0);
+}
+
+
+
+
+.contact{
+  margin-left: 20px;
+}
+
+
+
+#by{
+  
+  text-align: center;
+  padding-top: 50px;
 }
