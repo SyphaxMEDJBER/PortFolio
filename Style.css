@@ -204,7 +204,15 @@ body{
 
 .Skills{
   margin-left: 20px;
+  display: grid;
+  grid-template-columns: 50% 50%;
 
+}
+
+.Skills img{
+  margin-right: 300px;
+  height: 700px;
+  width: 700px;
 }
 
 
@@ -411,6 +419,7 @@ span{
 
 .contact{
   margin-left: 20px;
+  font-weight: 500;
 }
 
 
