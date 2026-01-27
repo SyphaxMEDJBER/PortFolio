@@ -261,7 +261,7 @@ span{
 
 .nvPython{
   height: 10px;
-  width: 25%;
+  width: 40%;
   background-color: #39FF14;
   border-radius: 5px;
 
@@ -281,28 +281,33 @@ span{
   border-radius: 5px;
 }
 
+.nvPhp{
+  height: 10px;
+  width: 60%;
+  background-color: #39FF14;
+  border-radius: 5px;
+}
 
 .nvJulia{
   height: 10px;
-  width: 25%;
+  width: 40%;
   background-color: #39FF14;
   border-radius: 5px;
 }
 
 
 
-
-.nvReact{
+.nvDjango{
   height: 10px;
-  width: 5%;
+  width: 40%;
   background-color: #39FF14;
   border-radius: 5px;
 }
 
 
-.nvTailwind{
+.nvBootstrap{
   height: 10px;
-  width: 5%;
+  width: 40%;
   background-color: #39FF14;
   border-radius: 5px;
 }
@@ -318,7 +323,7 @@ span{
 
 .nvYii{
   height: 10px;
-  width: 15%;
+  width: 75%;
   background-color: #39FF14;
   border-radius: 5px;
 }
@@ -343,6 +348,13 @@ span{
 .nvGit{
   height: 10px;
   width: 65%;
+  background-color: #39FF14;
+  border-radius: 5px;
+}
+
+.nvLinux{
+  height: 10px;
+  width: 55%;
   background-color: #39FF14;
   border-radius: 5px;
 }
