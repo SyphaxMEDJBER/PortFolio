@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,301 +7,225 @@
   <link rel="stylesheet" href="Style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Ewert&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Ewert&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-  
+  <script src="main.js" defer></script>
 </head>
 <body>
   <nav>
     <h3 class="logo">Syphax</h3>
     <ul>
       <li><a href="#Accueil">Accueil</a></li>
-      <li><a href="#Projects">Projects</a></li>
-      <li><a href="#Skills">Skills</a></li>
+      <li><a href="#Projects">Projets</a></li>
+      <li><a href="#Skills">Competences</a></li>
       <li><a href="#Contact">Contact</a></li>
     </ul>
   </nav>
 
-
-  <section class="Accueil" id="Accueil">
-    <img src="images/image7.png" alt="photo de profil">
-    <div class="description">   
-        <h1>Syphax Portfolio</h1>
-        <p>Étudiant en informatique passionné par les technologies émergentes, le développement web et la création numérique, je consacre une grande partie de mon temps à comprendre le fonctionnement interne des systèmes que nous utilisons au quotidien. Mon intérêt pour le code ne se limite pas à l’écriture de programmes ; il s’étend à la logique, à l’architecture et à l’esthétique des interfaces que les utilisateurs manipulent chaque jour.
-
-              J’aime particulièrement transformer des idées abstraites en projets concrets et fonctionnels. Chaque ligne de code représente pour moi une petite brique dans la construction d’un ensemble plus vaste, cohérent et utile. Cette vision m’a conduit à développer un goût prononcé pour la rigueur, la précision et la clarté. J’accorde une importance particulière à la structure du code, à l’optimisation des performances et à la lisibilité, convaincu qu’un bon développeur doit aussi être un bon architecte de la pensée.
-
-              En parallèle, j’ai découvert la dimension créative de l’informatique. Concevoir un site web, c’est aussi raconter une histoire, transmettre une émotion à travers la typographie, la couleur et le mouvement. C’est cet équilibre entre logique et esthétique qui m’attire le plus dans ce domaine. J’aime imaginer des interfaces qui inspirent confiance, fluidité et modernité, tout en restant accessibles et performantes sur tous les supports.
-
-              Ma démarche d’apprentissage repose sur la curiosité et l’expérimentation. J’apprends par la pratique : chaque nouveau projet est pour moi une opportunité d’explorer un langage, un outil ou une approche différente. J’ai ainsi acquis des compétences variées en développement front-end et back-end, en conception d’API, en bases de données et en déploiement d’applications. Je considère chaque obstacle comme une occasion d’approfondir ma compréhension des systèmes informatiques et d’affiner ma manière de penser.
-
-              Au-delà de la technique, j’accorde une grande importance au travail en équipe, à la communication et à la collaboration. Pour moi, le succès d’un projet ne repose pas seulement sur le code, mais sur la capacité des membres à partager leurs idées, à s’écouter et à se compléter. Mon ambition à long terme est d’évoluer dans un environnement innovant, au contact de personnes passionnées, afin de continuer à apprendre et à repousser mes limites.
-
-              En résumé, l’informatique représente pour moi bien plus qu’un domaine d’étude : c’est un langage universel permettant de créer, d’innover et de résoudre des problèmes concrets. À travers mes projets et mes apprentissages, je cherche à développer une expertise solide, mais aussi une vision globale du numérique, où l’humain reste toujours au centre de la technologie.
-        </p>
-    </div>
-  </section>
-
-  <section class="Projects" id="Projects">
-    
-      <h1 class="titre">Syphax Projects</h1>
-      <h5>ces travaux sont fait par syphax avec sérieux , et beaucoup d'amour</h5>
-    <div class="proj">
-
-      <div class="Project-card">
-        <h3>Matrice</h3>
-        <img src="images/matrice.jpg" alt="preoject photo">
-        <p>ceci est un projet de manipulation de matrices en java on peut faire toute les opération sur les matrices</p>
+  <main>
+    <section class="Accueil reveal" id="Accueil">
+      <img src="images/image7.png" alt="photo de profil">
+      <div class="description">
+          <h1>Syphax Portfolio</h1>
+          <p>
+            Étudiant en L3 Informatique, je mise sur la polyvalence. Je développe actuellement une compréhension
+            360° des technologies pour mieux appréhender ma future spécialisation en Master. Curieux de nature,
+            je forge mon expérience sur le terrain à travers des projets concrets et un apprentissage continu.
+          </p>
+          <div class="cta">
+            <a class="btn primary" href="#Projects">Voir mes projets</a>
+            <a class="btn ghost" href="#Contact">Me contacter</a>
+          </div>
+          <div class="stats">
+            <div class="stat">
+              <span class="stat-number">3+</span>
+              <span class="stat-label">projets</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">2</span>
+              <span class="stat-label">stacks</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">100%</span>
+              <span class="stat-label">motivation</span>
+            </div>
+          </div>
       </div>
-      <div class="Project-card">
-        <h3>Matrice</h3>
-        <img src="images/matrice.jpg" alt="preoject photo">
-        <p>ceci est un projet de manipulation de matrices en java on peut faire toute les opération sur les matrices</p>
-        
+    </section>
+
+    <section class="Projects reveal" id="Projects">
+        <h1 class="titre">Syphax Projects</h1>
+        <h5>Projets realises avec rigueur et envie d'apprendre</h5>
+      <div class="proj">
+        <div class="Project-card reveal">
+          <h3>Matrice</h3>
+          <img src="images/matrice.jpg" alt="projet matrices">
+          <p>Projet Java pour manipuler des matrices et appliquer les operations classiques.</p>
+          <div class="card-links">
+            <a href="#" class="chip">Code</a>
+            <a href="#" class="chip">Demo</a>
+          </div>
+        </div>
+        <div class="Project-card reveal">
+          <h3>Portfolio</h3>
+          <img src="images/matrice.jpg" alt="projet portfolio">
+          <p>Site personnel en HTML/CSS pour presenter mon profil et mes projets.</p>
+          <div class="card-links">
+            <a href="#" class="chip">Code</a>
+            <a href="#" class="chip">Demo</a>
+          </div>
+        </div>
+        <div class="Project-card reveal">
+          <h3>Mini app</h3>
+          <img src="images/matrice.jpg" alt="projet application">
+          <p>Application simple pour pratiquer JavaScript et l'organisation du code.</p>
+          <div class="card-links">
+            <a href="#" class="chip">Code</a>
+            <a href="#" class="chip">Demo</a>
+          </div>
+        </div>
       </div>
-      <div class="Project-card">
-        <h3>Matrice</h3>
-        <img src="images/matrice.jpg" alt="preoject photo">
-        <p>ceci est un projet de manipulation de matrices en java on peut faire toute les opération sur les matrices</p>
+    </section>
+
+    <section class="Skills reveal" id="Skills">
+      <div>
+        <h1 class="titre">Syphax skills</h1>
+        <div class="skil1 skill-group reveal">
+          <h3>Langages de programmation</h3>
+          <ul>
+            <li>
+              <span>java</span>
+              <div class="bare">
+                <div class="nvJava"></div>
+              </div>
+            </li>
+            <li>
+              <span>C/C++</span>
+              <div class="bare">
+                <div class="nvC"></div>
+              </div>
+            </li>
+            <li>
+              <span>html/css</span>
+              <div class="bare">
+                <div class="nvHtmlCss"></div>
+              </div>
+            </li>
+            <li>
+              <span>javaScript</span>
+              <div class="bare">
+                <div class="nvJs"></div>
+              </div>
+            </li>
+            <li>
+              <span>php</span>
+              <div class="bare">
+                <div class="nvPhp"></div>
+              </div>
+            </li>
+            <li>
+              <span>python</span>
+              <div class="bare">
+                <div class="nvPython"></div>
+              </div>
+            </li>
+            <li>
+              <span>julia</span>
+              <div class="bare">
+                <div class="nvJulia"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="skil2 skill-group reveal">
+          <h3>Frameworks et autres connaissances</h3>
+          <ul>
+            <li>
+              <span>Django</span>
+              <div class="bare">
+                <div class="nvDjango"></div>
+              </div>
+            </li>
+            <li>
+              <span>Bootstrap</span>
+              <div class="bare">
+                <div class="nvBootstrap"></div>
+              </div>
+            </li>
+            <li>
+              <span>Springboot</span>
+              <div class="bare">
+                <div class="nvSpringboot"></div>
+              </div>
+            </li>
+            <li>
+              <span>Yii</span>
+              <div class="bare">
+                <div class="nvYii"></div>
+              </div>
+            </li>
+            <li>
+              <span>Reseaux</span>
+              <div class="bare">
+                <div class="nvRes"></div>
+              </div>
+            </li>
+            <li>
+              <span>Algorithmes</span>
+              <div class="bare">
+                <div class="nvAlgo"></div>
+              </div>
+            </li>
+            <li>
+              <span>git/github</span>
+              <div class="bare">
+                <div class="nvGit"></div>
+              </div>
+            </li>
+            <li>
+              <span>Linux</span>
+              <div class="bare">
+                <div class="nvLinux"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="skil3 skill-group reveal">
+          <h3>Langues</h3>
+          <ul>
+            <li>
+              <span>Francais</span>
+              <div class="bare">
+                <div class="nvFr"></div>
+              </div>
+            </li>
+            <li>
+              <span>Anglais</span>
+              <div class="bare">
+                <div class="nvAng"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
-      
-    </div>
 
-  </section>
-
-
-
-
-
-
-  <section class="Skills" id="Skills">
-    <div>
-
-      <h1 class="titre">Syphax skills</h1>
-      <div class="skil1">
-      <h3>langages de Programmation</h3>
-      <ul>
-        
-        
-        <li>
-          <span>java </span>
-          <div class="bare">
-            <div class="nvJava">
-
-            </div>
-          </div>
-        </li>
-
-
-        <li>
-          <span>C/C++</span>
-          <div class="bare">
-            <div class="nvC">
-
-            </div>
-          </div>
-        </li>
-
-        <li>
-          <span>html/css</span>
-          <div class="bare">
-            <div class="nvHtmlCss">
-              
-            </div>
-          </div>
-        </li>
-        
-        <li>
-          <span>javaScript</span>
-          <div class="bare">
-            <div class="nvJs">
-              
-            </div>
-          </div>
-        </li>
-
-        <li>
-          <span>php</span>
-          <div class="bare">
-            <div class="nvPhp">
-
-            </div>
-          </div>
-        </li>
-        
-        <li>
-          <span>python</span>
-          <div class="bare">
-            <div class="nvPython">
-
-            </div>
-          </div>
-        </li>
-        <li>
-          <span>julia</span>
-          <div class="bare">
-            <div class="nvJulia">
-
-            </div>
-          </div>
-        </li>
-
-
-
-
-      </ul>
-
-    </div>
-
-    <div class="skil2">
-      <h3>frameworks et autres connaissances</h3>
-      <ul>
-        <li>
-          <span>Django</span>
-          <div class="bare">
-            <div class="nvDjango">
-
-            </div>
-          </div>
-        </li>
-
-        
-        <li>
-          <span>Bootstrap</span>
-          <div class="bare">
-            <div class="nvBootstrap">
-
-            </div>
-          </div>
-        </li>
-
-
-        <li>
-          <span>Springboot</span>
-          <div class="bare">
-            <div class="nvSpringboot">
-
-            </div>
-          </div>
-        </li>
-
-
-        
-        <li>
-          <span>Yii</span>
-          <div class="bare">
-            <div class="nvYii">
-              
-            </div>
-          </div>
-        </li>
-        
-        
-        <li>
-          <span>Réseaux</span>
-          <div class="bare">
-            <div class="nvRes">
-
-            </div>
-          </div>
-        </li>
-
-
-        <li>
-          <span>Algorithmes</span>
-          <div class="bare">
-            <div class="nvAlgo">
-
-            </div>
-          </div>
-        </li>
-
-        <li>
-          <span>git/github</span>
-          <div class="bare">
-            <div class="nvGit">
-
-            </div>
-          </div>
-        </li>
-        <li>
-          <span>Linux</span>
-          <div class="bare">
-            <div class="nvLinux">
-
-            </div>
-          </div>
-        </li>
-
-
-      </ul>
-      
-      
-    </div>
-
-
-    <div class="skil3">
-      <h3>Langues</h3>
-      <ul>
-        <li>
-          <span>Français</span>
-          <div class="bare">
-            <div class="nvFr">
-
-            </div>
-          </div>
-        </li>
-        
-        <li>
-          <span>Anglais</span>
-          <div class="bare">
-            <div class="nvAng">
-
-            </div>
-          </div>
-        </li>
-        
-      </ul>
-      
-    </div>
-    
-  </div>
-
-  <div>
-    <img src="images/image9.png">
-  </div>
-
-
-
-  </section>
-
-
-
-
-
-  <section class="contact" id="Contact">
-    <h1 class="titre">Contact</h1>
-    <div class="liste-contact">
-      <h2><span>GitHub: </span><a href="https://github.com/SyphaxMEDJBER" target="_blank">github.com/SyphaxMEDJBER  </a><i class="fa-brands fa-github"></i></h2>
-      <h2><span>Email: </span><a href="mailto:syphax.medjber.8@gmail.com">syphax.medjber.8@gmail.com  </a><i class="fa-solid fa-envelope"></i></h2>
-    </div>
-
-    <h1 id="by">THANK U FOR VISITING ❤️</h1>
-
-
-
-
-
-  </section>
-
-
-  
-
-
-
-
-
-  
+      <div>
+        <img src="images/image9.png" alt="illustration">
+      </div>
+    </section>
+
+    <section class="contact reveal" id="Contact">
+      <h1 class="titre">Contact</h1>
+      <div class="liste-contact">
+        <h2><span>GitHub: </span><a href="https://github.com/SyphaxMEDJBER" target="_blank">github.com/SyphaxMEDJBER</a><i class="fa-brands fa-github"></i></h2>
+        <h2><span>Email: </span><a href="mailto:syphax.medjber.8@gmail.com">syphax.medjber.8@gmail.com</a><i class="fa-solid fa-envelope"></i></h2>
+      </div>
+      <h1 id="by">THANKS FOR VISITING</h1>
+    </section>
+  </main>
+
+  <button class="to-top" aria-label="Revenir en haut">Top</button>
 </body>
 </html>
