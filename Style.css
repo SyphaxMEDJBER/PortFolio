@@ -57,7 +57,7 @@ nav {
   box-shadow: 0 8px 22px var(--shadow);
 }
 
-nav ul {
+.nav-links {
   display: flex;
   gap: 18px;
   align-items: center;
@@ -76,6 +76,24 @@ nav a {
 
 nav a:hover {
   color: #0b1116;
+}
+
+.nav-toggle {
+  display: none;
+  background: rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #f6f7f8;
+  margin: 4px 0;
+  border-radius: 2px;
 }
 
 .logo {
@@ -97,6 +115,10 @@ nav a:hover {
   gap: 40px;
   padding: 36px 0 24px;
   align-items: start;
+}
+
+.accueil-inner .description {
+  padding-right: 6px;
 }
 
 .Accueil img {
@@ -489,27 +511,44 @@ span {
 
 @media (max-width: 700px) {
   nav {
-    height: auto;
-    padding: 12px 16px;
-    flex-direction: column;
+    height: 64px;
+    padding: 0 16px;
+    flex-direction: row;
     align-items: center;
-    gap: 10px;
+    justify-content: space-between;
   }
 
-  nav ul {
+  .nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    display: none;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 14px 16px 18px;
+    background: rgba(96, 140, 170, 0.98);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
+  }
+
+  nav.open .nav-links {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    width: 100%;
-    gap: 8px 14px;
-    justify-items: center;
   }
 
   nav a {
-    font-size: 0.95rem;
+    font-size: 1rem;
+    width: 100%;
+    text-align: center;
   }
 
   main {
-    padding-top: 120px;
+    padding-top: 90px;
   }
 
   .stats {
@@ -517,7 +556,7 @@ span {
   }
 
   .description {
-    padding-left: 0;
+    padding-left: 10px;
   }
 
   .Projects {

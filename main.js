@@ -14,6 +14,22 @@ links.forEach((link) => {
   });
 });
 
+const nav = document.querySelector('nav');
+const navToggle = document.querySelector('.nav-toggle');
+if (nav && navToggle) {
+  navToggle.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  links.forEach((link) => {
+    link.addEventListener('click', () => {
+      nav.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+}
+
 const revealItems = document.querySelectorAll('.reveal');
 if ('IntersectionObserver' in window) {
   const observer = new IntersectionObserver(
