@@ -512,3 +512,9 @@ span {
     margin: 30px 0 90px;
   }
 }
+@media (max-width: 900px) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
