@@ -154,7 +154,8 @@ nav a:hover {
 }
 
 .Projects {
-  margin: 30px 30px 120px;
+  margin: 30px auto 120px;
+  padding: 0 30px;
 }
 
 .proj {
@@ -198,7 +199,7 @@ nav a:hover {
 }
 
 h1, h5 {
-  margin-left: 20px;
+  margin-left: 0;
 }
 
 .liste-contact {
@@ -295,7 +296,8 @@ h1, h5 {
 }
 
 .Skills {
-  margin: 40px 20px 120px;
+  margin: 40px auto 120px;
+  padding: 0 20px;
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
   gap: 30px;
@@ -401,7 +403,8 @@ span {
 }
 
 .contact {
-  margin: 40px 20px 120px;
+  margin: 40px auto 120px;
+  padding: 0 20px;
   font-weight: 500;
 }
 
@@ -477,14 +480,17 @@ span {
   }
 
   .Projects {
-    margin: 20px 16px 90px;
+    margin: 20px auto 90px;
+    padding: 0 16px;
   }
 
   .Skills {
-    margin: 30px 16px 90px;
+    margin: 30px auto 90px;
+    padding: 0 16px;
   }
 
   .contact {
-    margin: 30px 16px 90px;
+    margin: 30px auto 90px;
+    padding: 0 16px;
   }
 }
