@@ -435,8 +435,8 @@ span {
 }
 
 .reveal {
-  opacity: 0;
-  transform: translateY(18px);
+  opacity: 1;
+  transform: none;
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
@@ -510,11 +510,5 @@ span {
 
   .contact {
     margin: 30px 0 90px;
-  }
-}
-@media (max-width: 900px) {
-  .reveal {
-    opacity: 1;
-    transform: none;
   }
 }
