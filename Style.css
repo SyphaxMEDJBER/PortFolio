@@ -193,6 +193,9 @@ h1, h5 {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 10px 22px var(--shadow);
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .Project-card:hover {
@@ -213,6 +216,7 @@ h1, h5 {
   gap: 10px;
   padding: 0 16px 18px;
   justify-content: center;
+  margin-top: auto;
 }
 
 .chip {
