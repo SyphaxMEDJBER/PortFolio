@@ -7,6 +7,7 @@
   --muted: #d9e2e7;
   --accent: #39ff14;
   --shadow: rgba(0, 0, 0, 0.35);
+  --page-pad: clamp(16px, 4vw, 36px);
 }
 
 * {
@@ -26,6 +27,19 @@ body {
 
 main {
   padding-top: 90px;
+  width: 100%;
+}
+
+section {
+  width: 100%;
+}
+
+.section-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 var(--page-pad);
+  padding-left: max(var(--page-pad), env(safe-area-inset-left));
+  padding-right: max(var(--page-pad), env(safe-area-inset-right));
 }
 
 nav {
@@ -74,10 +88,14 @@ nav a:hover {
 }
 
 .Accueil {
+  padding: 0;
+}
+
+.accueil-inner {
   display: grid;
   grid-template-columns: 320px 1fr;
   gap: 40px;
-  padding: 36px 60px 24px;
+  padding: 36px 0 24px;
   align-items: start;
 }
 
@@ -86,6 +104,7 @@ nav a:hover {
   max-width: 300px;
   border-radius: 22px;
   box-shadow: none;
+  justify-self: center;
 }
 
 .Accueil h1 {
@@ -155,10 +174,7 @@ nav a:hover {
 }
 
 .Projects {
-  margin: 30px auto 120px;
-  padding: 0 30px;
-  max-width: 1100px;
-  width: 100%;
+  margin: 30px 0 120px;
 }
 
 .proj {
@@ -209,7 +225,7 @@ h1, h5 {
 }
 
 .liste-contact {
-  padding-left: 40px;
+  padding-left: 0;
 }
 
 .Project-card {
@@ -302,18 +318,15 @@ h1, h5 {
   filter: grayscale(15%);
 }
 
-.Skills {
-  margin: 40px auto 120px;
-  padding: 0 20px;
-  max-width: 1100px;
-  width: 100%;
+.skills-inner {
+  margin: 40px 0 120px;
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
   gap: 30px;
   align-items: start;
 }
 
-.Skills img {
+.skills-inner img {
   height: 520px;
   width: 100%;
   max-width: 520px;
@@ -412,10 +425,7 @@ span {
 }
 
 .contact {
-  margin: 40px auto 120px;
-  padding: 0 20px;
-  max-width: 1100px;
-  width: 100%;
+  margin: 40px 0 120px;
   font-weight: 500;
 }
 
@@ -458,16 +468,16 @@ span {
 }
 
 @media (max-width: 900px) {
-  .Accueil {
+  .accueil-inner {
     grid-template-columns: 1fr;
-    padding: 28px 24px 16px;
+    padding: 28px 0 16px;
   }
 
-  .Skills {
+  .skills-inner {
     grid-template-columns: 1fr;
   }
 
-  .Skills img {
+  .skills-inner img {
     max-width: 380px;
     margin: 0 auto;
   }
@@ -491,17 +501,14 @@ span {
   }
 
   .Projects {
-    margin: 20px auto 90px;
-    padding: 0 16px;
+    margin: 20px 0 90px;
   }
 
-  .Skills {
-    margin: 30px auto 90px;
-    padding: 0 16px;
+  .skills-inner {
+    margin: 30px 0 90px;
   }
 
   .contact {
-    margin: 30px auto 90px;
-    padding: 0 16px;
+    margin: 30px 0 90px;
   }
 }
