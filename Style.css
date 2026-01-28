@@ -378,13 +378,13 @@ span {
   border-radius: 999px;
 }
 
-.nvJava { width: 70%; }
-.nvC { width: 55%; }
-.nvPython { width: 40%; }
-.nvHtmlCss { width: 70%; }
-.nvJs { width: 60%; }
-.nvJulia { width: 40%; }
-.nvPhp { width: 60%; }
+.nvJava { width: 75%; }
+.nvC { width: 65%; }
+.nvPython { width: 45%; }
+.nvHtmlCss { width: 75%; }
+.nvJs { width: 65%; }
+.nvJulia { width: 45%; }
+.nvPhp { width: 65%; }
 
 .nvDjango { width: 55%; }
 .nvBootstrap { width: 40%; }
