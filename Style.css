@@ -269,41 +269,6 @@ h1, h5 {
   margin: 0 auto;
 }
 
-.Project-card.featured {
-  position: relative;
-  border: 1px solid rgba(255, 213, 122, 0.55);
-  background: linear-gradient(160deg, #f6d17b, #d79a2b 60%, #b87716);
-  box-shadow:
-    0 10px 26px rgba(0, 0, 0, 0.35),
-    0 0 24px rgba(255, 203, 99, 0.25);
-  animation: goldPulse 3.8s ease-in-out infinite;
-}
-
-.Project-card.featured::before {
-  content: "";
-  position: absolute;
-  inset: -1px;
-  border-radius: 18px;
-  background: linear-gradient(120deg, rgba(255, 238, 190, 0.35), rgba(255, 193, 24, 0.08), rgba(255, 238, 190, 0.35));
-  opacity: 0.45;
-  filter: blur(12px);
-  z-index: -1;
-}
-
-
-@keyframes goldPulse {
-  0%, 100% {
-    box-shadow:
-      0 10px 24px rgba(0, 0, 0, 0.35),
-      0 0 20px rgba(255, 203, 99, 0.22);
-  }
-  50% {
-    box-shadow:
-      0 14px 28px rgba(0, 0, 0, 0.4),
-      0 0 30px rgba(255, 213, 122, 0.35);
-  }
-}
-
 .Project-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 22px 40px var(--shadow);
@@ -332,6 +297,8 @@ h1, h5 {
   text-decoration: none;
   color: white;
   font-size: 0.85rem;
+  background: transparent;
+  cursor: pointer;
 }
 
 .Project-card.coming-soon {
@@ -491,6 +458,58 @@ span {
 .to-top.show {
   opacity: 1;
   transform: translateY(0);
+}
+
+.video-modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.video-modal.open {
+  display: flex;
+}
+
+.video-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(8, 12, 16, 0.7);
+  backdrop-filter: blur(4px);
+}
+
+.video-dialog {
+  position: relative;
+  width: min(900px, 92vw);
+  background: #0f1b23;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 14px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+}
+
+.video-dialog video {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+  background: #000;
+}
+
+.video-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
 }
 
 @media (max-width: 900px) {

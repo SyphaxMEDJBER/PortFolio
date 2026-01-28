@@ -61,13 +61,13 @@
         <h1 class="titre">Syphax Projects</h1>
         <h5>Projets réalisés avec rigueur et envie d'apprendre</h5>
         <div class="proj">
-          <div class="Project-card reveal featured">
+          <div class="Project-card reveal">
             <h3>CeriCar</h3>
             <img src="images/cc.png" alt="projet cericar">
             <p>Application de covoiturage en Yii (MVC) avec base de données et gestion utilisateurs.</p>
             <div class="card-links">
               <a href="https://github.com/SyphaxMEDJBER/CeriCar" class="chip" target="_blank">Code</a>
-              <a href="#" class="chip">Démo (à venir)</a>
+              <button class="chip demo-btn" data-video="cc.mp4">Démo</button>
             </div>
           </div>
           <div class="Project-card reveal">
@@ -288,5 +288,13 @@
   </main>
 
   <button class="to-top" aria-label="Revenir en haut">Top</button>
+
+  <div class="video-modal" id="video-modal" aria-hidden="true">
+    <div class="video-backdrop" data-close="true"></div>
+    <div class="video-dialog" role="dialog" aria-modal="true" aria-label="Démo vidéo">
+      <button class="video-close" type="button" aria-label="Fermer">×</button>
+      <video id="demo-video" controls preload="metadata"></video>
+    </div>
+  </div>
 </body>
 </html>

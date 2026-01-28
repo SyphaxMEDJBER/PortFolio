@@ -30,6 +30,53 @@ if (nav && navToggle) {
   });
 }
 
+const modal = document.querySelector('#video-modal');
+const modalVideo = document.querySelector('#demo-video');
+const demoButtons = document.querySelectorAll('.demo-btn');
+const closeModal = () => {
+  if (!modal || !modalVideo) {
+    return;
+  }
+  modal.classList.remove('open');
+  modal.setAttribute('aria-hidden', 'true');
+  modalVideo.pause();
+  modalVideo.removeAttribute('src');
+  modalVideo.load();
+};
+
+if (modal && modalVideo) {
+  demoButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const src = btn.getAttribute('data-video');
+      if (!src) {
+        return;
+      }
+      modalVideo.setAttribute('src', src);
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden', 'false');
+      modalVideo.play();
+    });
+  });
+
+  modal.addEventListener('click', (event) => {
+    const target = event.target;
+    if (target instanceof HTMLElement && target.getAttribute('data-close') === 'true') {
+      closeModal();
+    }
+  });
+
+  const closeBtn = modal.querySelector('.video-close');
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeModal);
+  }
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && modal.classList.contains('open')) {
+      closeModal();
+    }
+  });
+}
+
 const revealItems = document.querySelectorAll('.reveal');
 if ('IntersectionObserver' in window) {
   const observer = new IntersectionObserver(
