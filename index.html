@@ -1,9 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Syphax Portfolio</title>
+  <meta name="description" content="Portfolio de Syphax MEDJBER, etudiant en L3 informatique a la recherche d'une alternance en developpement, systemes et reseaux.">
+  <title>Syphax MEDJBER | Portfolio alternance informatique</title>
   <link rel="stylesheet" href="Style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,15 +13,18 @@
   <script src="main.js" defer></script>
 </head>
 <body>
+  <canvas id="neural-bg" aria-hidden="true"></canvas>
+
   <nav>
-    <h3 class="logo">Syphax</h3>
+    <a class="logo" href="#Accueil" aria-label="Retour a l'accueil">Syphax MEDJBER</a>
     <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-links">
       <span></span>
       <span></span>
       <span></span>
     </button>
     <ul id="nav-links" class="nav-links">
-      <li><a href="#Accueil">Accueil</a></li>
+      <li><a href="#Accueil">Profil</a></li>
+      <li><a href="#Objectif">Objectif</a></li>
       <li><a href="#Projects">Projets</a></li>
       <li><a href="#Skills">Compétences</a></li>
       <li><a href="#Contact">Contact</a></li>
@@ -30,303 +34,301 @@
   <main>
     <section class="Accueil reveal" id="Accueil">
       <div class="section-inner accueil-inner">
-        <img src="images/image7.png" alt="photo de profil">
+        <img src="images/image7.png" alt="Photo de profil de Syphax MEDJBER">
+
         <div class="description">
-          <h1>Syphax Portfolio</h1>
-          <p>
-            Étudiant en L3 Informatique, je mise sur la polyvalence. Je développe actuellement une compréhension
-            360° des technologies pour mieux appréhender ma future spécialisation en Master. Curieux de nature,
-            je forge mon expérience sur le terrain à travers des projets concrets et un apprentissage continu.
+          <div class="hero-eyebrow">Recherche alternance • Informatique</div>
+          <h1 class="typing-title" data-text="Etudiant en L3 Informatique.">Etudiant en L3 Informatique.</h1>
+          <p class="hero-lead">
+            Je conçois des solutions logicielles fiables et performantes, avec une approche orientée
+            qualité, structure et impact. Intéressé par l'intelligence artificielle, les systèmes et
+            les réseaux informatiques, j'apprends rapidement et je m'adapte à de nouveaux environnements
+            techniques. Je recherche une alternance où je pourrai m'investir pleinement pour développer
+            des solutions concrètes et progresser dans des contextes exigeants.
           </p>
+
           <div class="cta">
-            <a class="btn primary" href="#Projects">Voir mes projets</a>
-            <a class="btn ghost" href="#Contact">Me contacter</a>
+            <a class="btn primary" href="https://github.com/SyphaxMEDJBER" target="_blank" rel="noopener">
+              <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub
+            </a>
           </div>
-          <div class="stats">
+
+          <div class="stats" aria-label="Points clés du profil">
             <div class="stat">
-              <span class="stat-number">9+</span>
-              <span class="stat-label">projets</span>
+              <span class="stat-number">L3</span>
+              <span class="stat-label">Informatique</span>
             </div>
             <div class="stat">
-              <span class="stat-number">100%</span>
-              <span class="stat-label">motivation</span>
+              <span class="stat-number">10+</span>
+              <span class="stat-label">projets réalisés</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">IA</span>
+              <span class="stat-label">intérêt technique</span>
             </div>
           </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="Objectif reveal" id="Objectif">
+      <div class="section-inner">
+        <h1 class="titre">Mes objectifs</h1>
+        <div class="objective-grid">
+          <article class="objective-card reveal">
+            <i class="fa-solid fa-laptop-code" aria-hidden="true"></i>
+            <h3>Obtenir une alternance formatrice</h3>
+            <p>Rejoindre une équipe où je pourrai contribuer à des projets concrets, comprendre les besoins métier et progresser avec des retours réguliers.</p>
+          </article>
+          <article class="objective-card reveal">
+            <i class="fa-solid fa-server" aria-hidden="true"></i>
+            <h3>Renforcer mes compétences techniques</h3>
+            <p>Approfondir mes connaissances en informatique, consolider mes acquis et rester adaptable face à différents environnements techniques.</p>
+          </article>
+          <article class="objective-card reveal">
+            <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+            <h3>Acquérir une expérience professionnelle</h3>
+            <p>Mieux comprendre le fonctionnement du monde de l'entreprise, gagner en autonomie et développer des habitudes de travail solides.</p>
+          </article>
         </div>
       </div>
     </section>
 
     <section class="Projects reveal" id="Projects">
       <div class="section-inner">
-        <h1 class="titre">Syphax Projects</h1>
-        <h5>Projets réalisés avec rigueur et envie d'apprendre</h5>
+        <h1 class="titre">Projets clés</h1>
+        <h5>Une sélection de projets qui montre ma polyvalence: web, Java, Python, C, réseaux et bases de données.</h5>
         <div class="proj">
-          <div class="Project-card reveal">
+          <article class="Project-card reveal featured">
             <h3>CeriCar</h3>
-            <img src="images/cc.png" alt="projet cericar">
-            <p>Application de covoiturage en Yii (MVC) avec base de données et gestion utilisateurs.</p>
+            <img src="images/cc.png" alt="Capture du projet CeriCar">
+            <p>Application de covoiturage en Yii avec architecture MVC, gestion utilisateurs, trajets et base de données.</p>
+            <div class="project-tags" aria-label="Technologies utilisées">
+              <span>Yii</span><span>PHP</span><span>SQL</span><span>MVC</span>
+            </div>
             <div class="card-links">
-              <a href="https://github.com/SyphaxMEDJBER/CeriCar" class="chip" target="_blank">Code</a>
+              <a href="https://github.com/SyphaxMEDJBER/CeriCar" class="chip" target="_blank" rel="noopener">Code</a>
               <button class="chip demo-btn" data-video="cc.mp4">Démo</button>
             </div>
-          </div>
-          <div class="Project-card reveal">
+          </article>
+
+          <article class="Project-card reveal featured">
             <h3>Monitoring System</h3>
-            <img src="images/ms.png" alt="projet monitoring system">
-            <p>Supervision Python/Linux avec collecte de métriques, alertes et interface web.</p>
-            <div class="card-links">
-              <a href="https://github.com/SyphaxMEDJBER/MonitoringSystem" class="chip" target="_blank">Code</a>
+            <img src="images/ms.png" alt="Capture du projet Monitoring System">
+            <p>Outil de supervision Python/Linux avec collecte de métriques, alertes et interface web.</p>
+            <div class="project-tags" aria-label="Technologies utilisées">
+              <span>Python</span><span>Linux</span><span>Monitoring</span>
             </div>
-          </div>
-          <div class="Project-card reveal">
-            <h3>Passion-Connect</h3>
-            <img src="images/passio.png" alt="projet passion connect">
-            <p>Plateforme web pour trouver et rejoindre des activites locales par passion, avec un chat de groupe dedie pour mieux organiser les participants.</p>
             <div class="card-links">
-              <a href="https://github.com/SyphaxMEDJBER/Passion" class="chip" target="_blank">Code</a>
+              <a href="https://github.com/SyphaxMEDJBER/MonitoringSystem" class="chip" target="_blank" rel="noopener">Code</a>
+            </div>
+          </article>
+
+          <article class="Project-card reveal featured">
+            <h3>Passion-Connect</h3>
+            <img src="images/passio.png" alt="Capture du projet Passion-Connect">
+            <p>Plateforme web pour trouver des activités locales par passion, rejoindre des groupes et échanger via chat.</p>
+            <div class="project-tags" aria-label="Technologies utilisées">
+              <span>Web</span><span>Chat</span><span>Base de données</span>
+            </div>
+            <div class="card-links">
+              <a href="https://github.com/SyphaxMEDJBER/Passion" class="chip" target="_blank" rel="noopener">Code</a>
               <button class="chip demo-btn" data-video="passion.mp4">Démo</button>
             </div>
-          </div>
-          <div class="Project-card reveal coming-soon">
-            <h3>Simulation Anneau Token Ring Dynamique</h3>
-            <img src="images/res.png" alt="projet simulation anneau token ring dynamique">
-            <p>Simulation C d'un reseau Token Ring dynamique avec sockets: jeton, unicast/broadcast, transfert fiable, connexion/deconnexion de noeuds et tolerance aux pannes.</p>
-            <div class="card-links">
-              <a href="https://github.com/SyphaxMEDJBER/masimulation-anneau-token-ring-dynamique" class="chip" target="_blank">Suivre l'avancement</a>
-              <span class="chip">En cours</span>
+          </article>
+
+          <article class="Project-card reveal featured">
+            <h3>Token Ring dynamique</h3>
+            <img src="images/res.png" alt="Capture du projet Token Ring dynamique">
+            <p>Simulation C d'un réseau Token Ring dynamique avec sockets, jeton, broadcast, reprise et tolérance aux pannes.</p>
+            <div class="project-tags" aria-label="Technologies utilisées">
+              <span>C</span><span>Sockets</span><span>Réseaux</span>
             </div>
-          </div>
-          <div class="Project-card reveal">
+            <div class="card-links">
+              <a href="https://github.com/SyphaxMEDJBER/simulation-anneau-token-ring-dynamique" class="chip" target="_blank" rel="noopener">Code</a>
+            </div>
+          </article>
+
+          <article class="Project-card reveal">
             <h3>Bibliothèque de matrices</h3>
-            <img src="images/mat.png" alt="projet bibliothèque de matrices">
-            <p>Bibliothèque Java pour les opérations avancées (déterminant, produit, inverse...).</p>
-            <div class="card-links">
-              <a href="https://github.com/SyphaxMEDJBER/MATRICE-JAVA" class="chip" target="_blank">Code</a>
+            <img src="images/mat.png" alt="Capture du projet bibliothèque de matrices">
+            <p>Bibliothèque Java pour les opérations avancées: déterminant, produit, inverse et manipulation de matrices.</p>
+            <div class="project-tags" aria-label="Technologies utilisées">
+              <span>Java</span><span>Algorithmique</span>
             </div>
-          </div>
-          <div class="Project-card reveal">
+            <div class="card-links">
+              <a href="https://github.com/SyphaxMEDJBER/MATRICE-JAVA" class="chip" target="_blank" rel="noopener">Code</a>
+            </div>
+          </article>
+
+          <article class="Project-card reveal">
             <h3>Mem2gether</h3>
-            <img src="images/w2.png" alt="projet mem2gether">
-            <p>Application collaborative pour regarder des vidéos ensemble avec chat en temps réel.</p>
-            <div class="card-links">
-              <a href="https://github.com/SyphaxMEDJBER/Mem2gether" class="chip" target="_blank">Code</a>
+            <img src="images/w2.png" alt="Capture du projet Mem2gether">
+            <p>Application collaborative pour regarder des vidéos ensemble avec synchronisation et chat en temps réel.</p>
+            <div class="project-tags" aria-label="Technologies utilisées">
+              <span>Web</span><span>Temps réel</span>
             </div>
-          </div>
-          <div class="Project-card reveal">
+            <div class="card-links">
+              <a href="https://github.com/SyphaxMEDJBER/Mem2gether" class="chip" target="_blank" rel="noopener">Code</a>
+            </div>
+          </article>
+
+          <article class="Project-card reveal">
             <h3>Gestion de supérette</h3>
-            <img src="images/sup.png" alt="projet gestion supérette">
-            <p>Application Java pour la gestion des produits, des ventes et de la logique métier.</p>
-          </div>
-          <div class="Project-card reveal">
+            <img src="images/sup.png" alt="Capture du projet gestion de supérette">
+            <p>Application Java pour gérer les produits, les ventes, les stocks et la logique métier d'une supérette.</p>
+            <div class="project-tags" aria-label="Technologies utilisées">
+              <span>Java</span><span>Gestion</span>
+            </div>
+            <div class="card-links">
+              <a href="https://github.com/SyphaxMEDJBER/SuperMarket" class="chip" target="_blank" rel="noopener">Code</a>
+            </div>
+          </article>
+
+          <article class="Project-card reveal">
             <h3>Cabinet dentaire</h3>
-            <img src="images/dent.png" alt="projet cabinet dentaire">
-            <p>Application PHP pour la gestion d'un cabinet dentaire (patients, rendez-vous).</p>
-            <div class="card-links">
-              <a href="https://github.com/SyphaxMEDJBER/Dentics2" class="chip" target="_blank">Code</a>
+            <img src="images/dent.png" alt="Capture du projet cabinet dentaire">
+            <p>Application PHP pour la gestion de patients, rendez-vous et informations administratives d'un cabinet.</p>
+            <div class="project-tags" aria-label="Technologies utilisées">
+              <span>PHP</span><span>SQL</span>
             </div>
-          </div>
-          <div class="Project-card reveal">
+            <div class="card-links">
+              <a href="https://github.com/SyphaxMEDJBER/Dentics2" class="chip" target="_blank" rel="noopener">Code</a>
+            </div>
+          </article>
+
+          <article class="Project-card reveal">
             <h3>Moteur de recherche</h3>
-            <img src="images/mdr.png" alt="projet moteur de recherche">
-            <p>Moteur Java avec recherche textuelle basée sur TF-IDF et BM25.</p>
-          </div>
-          <div class="Project-card reveal">
+            <img src="images/mdr.png" alt="Capture du projet moteur de recherche">
+            <p>Moteur Java avec indexation et recherche textuelle basée sur TF-IDF et BM25.</p>
+            <div class="project-tags" aria-label="Technologies utilisées">
+              <span>Java</span><span>TF-IDF</span><span>BM25</span>
+            </div>
+            <div class="card-links">
+              <a href="https://github.com/SyphaxMEDJBER/Search-Engine" class="chip" target="_blank" rel="noopener">Code</a>
+            </div>
+          </article>
+
+          <article class="Project-card reveal">
             <h3>Plus court chemin</h3>
-            <img src="images/pcc.png" alt="projet plus court chemin">
-            <p>Collection d'algorithmes de graphe (Dijkstra, Bellman-Ford, etc.).</p>
-            <div class="card-links">
-              <a href="https://github.com/SyphaxMEDJBER/the-problem-of-shortest-path" class="chip" target="_blank">Code</a>
+            <img src="images/pcc.png" alt="Capture du projet plus court chemin">
+            <p>Implémentations d'algorithmes de graphe, dont Dijkstra et Bellman-Ford.</p>
+            <div class="project-tags" aria-label="Technologies utilisées">
+              <span>Graphes</span><span>Java</span>
             </div>
-          </div>
-          <div class="Project-card reveal">
+            <div class="card-links">
+              <a href="https://github.com/SyphaxMEDJBER/the-problem-of-shortest-path" class="chip" target="_blank" rel="noopener">Code</a>
+            </div>
+          </article>
+
+          <article class="Project-card reveal">
             <h3>Portfolio statique</h3>
-            <img src="images/portfolio.png" alt="projet portfolio statique">
-            <p>Site personnel HTML/CSS pour présenter mon profil, mes compétences et mes projets.</p>
-            <div class="card-links">
-              <a href="https://github.com/SyphaxMEDJBER/PortFolio" class="chip" target="_blank">Code</a>
+            <img src="images/portfolio.png" alt="Capture du portfolio statique">
+            <p>Site personnel HTML/CSS/JavaScript pour présenter mon profil, mes compétences et mes projets.</p>
+            <div class="project-tags" aria-label="Technologies utilisées">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span>
             </div>
-          </div>
-          <div class="Project-card reveal coming-soon">
-            <h3>Autres projets</h3>
-            <img src="images/a.png" alt="illustration projets à venir">
-            <p>D'autres projets arrivent bientôt. Je continue d'apprendre et de construire.</p>
             <div class="card-links">
-              <span class="chip">Bientôt</span>
+              <a href="https://github.com/SyphaxMEDJBER/PortFolio" class="chip" target="_blank" rel="noopener">Code</a>
             </div>
-          </div>
+          </article>
         </div>
         <p class="projects-note">
-          Plus de TP et de projets sont disponibles sur mon GitHub :
-          <a href="https://github.com/SyphaxMEDJBER" target="_blank">github.com/SyphaxMEDJBER</a>.
+          Retrouvez aussi mes autres travaux sur
+          <a href="https://github.com/SyphaxMEDJBER" target="_blank" rel="noopener">github.com/SyphaxMEDJBER</a>.
         </p>
       </div>
     </section>
 
     <section class="Skills reveal" id="Skills">
       <div class="section-inner skills-inner">
-        <div>
-          <h1 class="titre">Syphax skills</h1>
-          <div class="skil2 skill-group reveal">
+        <h1 class="titre">Compétences techniques</h1>
+        <div class="skill-layout">
+          <div class="skill-group reveal">
             <h3>Développement</h3>
             <ul>
-              <li>
-                <span>Java</span>
-                <div class="bare">
-                  <div class="nvJava"></div>
-                </div>
-              </li>
-              <li>
-                <span>HTML/CSS</span>
-                <div class="bare">
-                  <div class="nvHtmlCss"></div>
-                </div>
-              </li>
-              <li>
-                <span>React</span>
-                <div class="bare">
-                  <div class="nvReact"></div>
-                </div>
-              </li>
-              <li>
-                <span>Tailwind CSS</span>
-                <div class="bare">
-                  <div class="nvTailwind"></div>
-                </div>
-              </li>
-              <li>
-                <span>Spring Boot</span>
-                <div class="bare">
-                  <div class="nvSpringboot"></div>
-                </div>
-              </li>
-              <li>
-                <span>Django</span>
-                <div class="bare">
-                  <div class="nvDjango"></div>
-                </div>
-              </li>
-              <li>
-                <span>Yii</span>
-                <div class="bare">
-                  <div class="nvYii"></div>
-                </div>
-              </li>
-              <li>
-                <span>SQL</span>
-                <div class="bare">
-                  <div class="nvSql"></div>
-                </div>
-              </li>
-              <li>
-                <span>C++</span>
-                <div class="bare">
-                  <div class="nvC"></div>
-                </div>
-              </li>
-              <li>
-                <span>PHP</span>
-                <div class="bare">
-                  <div class="nvPhp"></div>
-                </div>
-              </li>
-              <li>
-                <span>Python</span>
-                <div class="bare">
-                  <div class="nvPython"></div>
-                </div>
-              </li>
+              <li><span>Java</span><div class="bare"><div class="nvJava"></div></div></li>
+              <li><span>HTML/CSS</span><div class="bare"><div class="nvHtmlCss"></div></div></li>
+              <li><span>JavaScript</span><div class="bare"><div class="nvJs"></div></div></li>
+              <li><span>React</span><div class="bare"><div class="nvReact"></div></div></li>
+              <li><span>Tailwind CSS</span><div class="bare"><div class="nvTailwind"></div></div></li>
+              <li><span>Spring Boot</span><div class="bare"><div class="nvSpringboot"></div></div></li>
+              <li><span>Django</span><div class="bare"><div class="nvDjango"></div></div></li>
+              <li><span>Yii</span><div class="bare"><div class="nvYii"></div></div></li>
+              <li><span>SQL</span><div class="bare"><div class="nvSql"></div></div></li>
+              <li><span>PHP</span><div class="bare"><div class="nvPhp"></div></div></li>
+              <li><span>Python</span><div class="bare"><div class="nvPython"></div></div></li>
             </ul>
           </div>
 
-          <div class="skil3 skill-group reveal">
-            <h3>Systèmes et outils</h3>
+          <div class="skill-group reveal">
+            <h3>Systèmes, réseaux et outils</h3>
             <ul>
-              <li>
-                <span>C</span>
-                <div class="bare">
-                  <div class="nvC"></div>
-                </div>
-              </li>
-              <li>
-                <span>Réseaux</span>
-                <div class="bare">
-                  <div class="nvRes"></div>
-                </div>
-              </li>
-              <li>
-                <span>Algorithmes</span>
-                <div class="bare">
-                  <div class="nvAlgo"></div>
-                </div>
-              </li>
-              <li>
-                <span>Git/GitHub</span>
-                <div class="bare">
-                  <div class="nvGit"></div>
-                </div>
-              </li>
-              <li>
-                <span>Linux</span>
-                <div class="bare">
-                  <div class="nvLinux"></div>
-                </div>
-              </li>
+              <li><span>C</span><div class="bare"><div class="nvC"></div></div></li>
+              <li><span>Réseaux</span><div class="bare"><div class="nvRes"></div></div></li>
+              <li><span>Algorithmes</span><div class="bare"><div class="nvAlgo"></div></div></li>
+              <li><span>Git/GitHub</span><div class="bare"><div class="nvGit"></div></div></li>
+              <li><span>Linux</span><div class="bare"><div class="nvLinux"></div></div></li>
             </ul>
           </div>
 
-          <div class="skil4 skill-group reveal">
+          <div class="skill-group reveal">
+            <h3>Méthodes de gestion de projet</h3>
+            <ul class="method-list">
+              <li><i class="fa-solid fa-diagram-project" aria-hidden="true"></i><span>Méthode en cascade</span></li>
+              <li><i class="fa-solid fa-rotate" aria-hidden="true"></i><span>Scrum</span></li>
+              <li><i class="fa-solid fa-arrows-spin" aria-hidden="true"></i><span>Méthode en spirale</span></li>
+            </ul>
+          </div>
+
+          <div class="skill-group reveal">
             <h3>Langues</h3>
             <ul>
-              <li>
-                <span>Français</span>
-                <div class="bare">
-                  <div class="nvFr"></div>
-                </div>
-              </li>
-              <li>
-                <span>Anglais</span>
-                <div class="bare">
-                  <div class="nvAng"></div>
-                </div>
-              </li>
+              <li><span>Français</span><div class="bare"><div class="nvFr"></div></div></li>
+              <li><span>Anglais</span><div class="bare"><div class="nvAng"></div></div></li>
             </ul>
           </div>
 
-          <div class="skil5 skill-group reveal">
+          <div class="skill-group reveal">
             <h3>Certifications et parcours</h3>
             <ul class="cert-list">
-              <li>
-                <span>CCNA 1</span>
-                <strong>Acquise</strong>
-              </li>
-              <li>
-                <span>CCNA 2</span>
-                <strong>En cours</strong>
-              </li>
-              <li>
-                <span>Bac scientifique</span>
-                <strong>15/20</strong>
-              </li>
+              <li><span>CCNA 1</span><strong>Acquise</strong></li>
+              <li><span>Bac scientifique</span><strong>15/20</strong></li>
             </ul>
           </div>
         </div>
-
       </div>
     </section>
 
     <section class="contact reveal" id="Contact">
-      <div class="section-inner">
-        <h1 class="titre">Contact</h1>
-        <div class="liste-contact">
-          <h2><span>GitHub: </span><a href="https://github.com/SyphaxMEDJBER" target="_blank">github.com/SyphaxMEDJBER</a><i class="fa-brands fa-github"></i></h2>
-          <h2><span>Email: </span><a href="mailto:syphax.medjber.8@gmail.com">syphax.medjber.8@gmail.com</a><i class="fa-solid fa-envelope"></i></h2>
+      <div class="section-inner contact-inner">
+        <div>
+          <h1 class="titre">Contact</h1>
+          <p class="contact-lead">
+            Pour un échange au salon, une opportunité d'alternance ou une question sur mes projets.
+          </p>
         </div>
-        <h1 id="by">THANKS FOR VISITING ❤️</h1>
+
+        <div class="contact-actions">
+          <a class="contact-card" href="mailto:syphax.medjber.8@gmail.com">
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+            <span>Email</span>
+            <strong>syphax.medjber.8@gmail.com</strong>
+          </a>
+          <a class="contact-card" href="https://github.com/SyphaxMEDJBER" target="_blank" rel="noopener">
+            <i class="fa-brands fa-github" aria-hidden="true"></i>
+            <span>GitHub</span>
+            <strong>github.com/SyphaxMEDJBER</strong>
+          </a>
+        </div>
+
+        <p id="by">Merci pour votre visite</p>
       </div>
     </section>
   </main>
 
-  <button class="to-top" aria-label="Revenir en haut">Top</button>
+  <button class="to-top" aria-label="Revenir en haut"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></button>
 
   <div class="video-modal" id="video-modal" aria-hidden="true">
     <div class="video-backdrop" data-close="true"></div>
