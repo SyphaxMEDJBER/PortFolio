@@ -348,9 +348,9 @@ nav a:not(.logo):focus-visible {
 
 .stats {
   display: grid;
-  grid-template-columns: repeat(3, minmax(120px, 1fr));
+  grid-template-columns: repeat(4, minmax(105px, 1fr));
   gap: 10px;
-  max-width: 560px;
+  max-width: 620px;
 }
 
 .stat {
@@ -794,6 +794,7 @@ nav a:not(.logo):focus-visible {
 .nvJulia,
 .nvPhp,
 .nvReact,
+.nvAngular,
 .nvTailwind,
 .nvDjango,
 .nvSpringboot,
@@ -802,6 +803,7 @@ nav a:not(.logo):focus-visible {
 .nvRes,
 .nvAlgo,
 .nvGit,
+.nvDocker,
 .nvLinux,
 .nvFr,
 .nvAng {
@@ -823,6 +825,7 @@ nav a:not(.logo):focus-visible {
 .nvJulia { width: 45%; }
 .nvPhp { width: 65%; }
 .nvReact { width: 65%; }
+.nvAngular { width: 30%; }
 .nvTailwind { width: 65%; }
 .nvDjango { width: 65%; }
 .nvSpringboot { width: 40%; }
@@ -831,6 +834,7 @@ nav a:not(.logo):focus-visible {
 .nvRes { width: 75%; }
 .nvAlgo { width: 70%; }
 .nvGit { width: 65%; }
+.nvDocker { width: 50%; }
 .nvLinux { width: 55%; }
 .nvFr { width: 85%; }
 .nvAng { width: 50%; }
