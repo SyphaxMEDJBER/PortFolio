@@ -50,13 +50,26 @@ if ('IntersectionObserver' in window) {
         }
       });
     },
-    { threshold: 0.12 }
+    { rootMargin: '0px 0px -8% 0px', threshold: 0.01 }
   );
 
   revealElements.forEach((element, index) => {
     element.style.setProperty('--reveal-delay', `${Math.min(index % 6, 5) * 70}ms`);
     revealObserver.observe(element);
   });
+
+  window.setTimeout(() => {
+    if (!window.matchMedia('(max-width: 820px)').matches) {
+      return;
+    }
+
+    document.querySelectorAll('.Projects.reveal, .Projects .reveal').forEach((element) => {
+      if (!element.classList.contains('is-visible')) {
+        element.classList.add('is-visible');
+        revealObserver.unobserve(element);
+      }
+    });
+  }, 1400);
 } else {
   revealElements.forEach((element) => element.classList.add('is-visible'));
 }
