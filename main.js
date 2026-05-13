@@ -142,8 +142,21 @@ window.addEventListener('scroll', onScroll, { passive: true });
 onScroll();
 
 if (toTop) {
-  toTop.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+  toTop.addEventListener('click', (event) => {
+    event.preventDefault();
+
+    try {
+      window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+    } catch (error) {
+      window.scrollTo(0, 0);
+    }
+
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+
+    if (window.location.hash) {
+      history.replaceState(null, '', window.location.pathname + window.location.search);
+    }
   });
 }
 
