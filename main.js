@@ -74,6 +74,65 @@ if ('IntersectionObserver' in window) {
   revealElements.forEach((element) => element.classList.add('is-visible'));
 }
 
+const projectCategories = document.querySelectorAll('.project-category');
+
+const updateProjectCategory = (category) => {
+  const grid = category.querySelector('.proj');
+  const cards = Array.from(category.querySelectorAll('.Project-card'));
+
+  if (!grid || cards.length === 0) {
+    return;
+  }
+
+  cards.forEach((card) => card.classList.remove('is-hidden-by-toggle'));
+
+  let toggle = category.querySelector('.project-toggle');
+  const firstTop = cards[0].offsetTop;
+  const firstRowCount = cards.filter((card) => Math.abs(card.offsetTop - firstTop) < 4).length;
+
+  if (cards.length <= firstRowCount) {
+    if (toggle) {
+      toggle.remove();
+    }
+    category.dataset.expanded = 'true';
+    return;
+  }
+
+  if (!toggle) {
+    toggle = document.createElement('button');
+    toggle.type = 'button';
+    toggle.className = 'project-toggle';
+    grid.insertAdjacentElement('afterend', toggle);
+
+    toggle.addEventListener('click', () => {
+      const isExpanded = category.dataset.expanded === 'true';
+      category.dataset.expanded = String(!isExpanded);
+      updateProjectCategory(category);
+    });
+  }
+
+  if (category.dataset.expanded === 'true') {
+    cards.forEach((card) => card.classList.add('is-visible'));
+    toggle.textContent = 'Voir moins';
+    toggle.setAttribute('aria-expanded', 'true');
+    return;
+  }
+
+  category.dataset.expanded = 'false';
+  cards.slice(firstRowCount).forEach((card) => card.classList.add('is-hidden-by-toggle'));
+  toggle.textContent = 'Voir plus';
+  toggle.setAttribute('aria-expanded', 'false');
+};
+
+const updateProjectCategories = () => {
+  projectCategories.forEach(updateProjectCategory);
+};
+
+if (projectCategories.length > 0) {
+  updateProjectCategories();
+  window.addEventListener('resize', updateProjectCategories);
+}
+
 const modal = document.querySelector('#video-modal');
 const modalVideo = document.querySelector('#demo-video');
 const demoButtons = document.querySelectorAll('.demo-btn');
