@@ -13,6 +13,7 @@
   <script src="main.js" defer></script>
 </head>
 <body>
+  <div class="scroll-progress" aria-hidden="true"><div class="scroll-progress-bar"></div></div>
   <canvas id="neural-bg" aria-hidden="true"></canvas>
 
   <nav>
@@ -34,7 +35,9 @@
   <main>
     <section class="Accueil reveal" id="Accueil">
       <div class="section-inner accueil-inner">
-        <img src="images/image7.png" alt="Photo de profil de Syphax MEDJBER">
+        <div class="avatar-wrap">
+          <img src="images/image7.png" alt="Photo de profil de Syphax MEDJBER">
+        </div>
 
         <div class="description">
           <div class="hero-eyebrow">Recherche alternance • Informatique</div>
@@ -98,10 +101,86 @@
     <section class="Projects reveal" id="Projects">
       <div class="section-inner">
         <h1 class="titre">Projets clés</h1>
-        <h5>Des réalisations concrètes regroupées par domaine : développement, intelligence artificielle, réseaux et systèmes.</h5>
+        <h5>Des réalisations concrètes regroupées par domaine : intelligence artificielle, réseaux et systèmes, et autres projets.</h5>
 
         <div class="project-category reveal">
-          <h2>Développement</h2>
+          <h2>IA</h2>
+          <div class="proj">
+            <article class="Project-card reveal stage-highlight">
+              <h3>Stage IA - Apprentissage fédéré</h3>
+              <img src="images/clustering.png" alt="Illustration du stage IA en apprentissage fédéré">
+              <p>Stage au Laboratoire Informatique d'Avignon autour du traitement de logs, du scripting et de l'automatisation pour une plateforme d'apprentissage fédéré.</p>
+              <div class="project-tags" aria-label="Compétences acquises pendant le stage">
+                <span>Python</span><span>Automatisation</span><span>APIs</span><span>Systèmes distribués</span><span>Apprentissage fédéré</span>
+              </div>
+            </article>
+
+            <article class="Project-card reveal">
+              <h3>Maze Solver AI</h3>
+              <img src="images/project-maze-generated.png" alt="Illustration du projet Maze Solver AI">
+              <p>Programme Python qui résout des labyrinthes texte avec DFS, BFS et A*, puis génère une visualisation du chemin et des cases explorées.</p>
+              <div class="project-tags" aria-label="Technologies utilisées">
+                <span>Python</span><span>DFS</span><span>BFS</span><span>A*</span>
+              </div>
+              <div class="card-links">
+                <a href="https://github.com/SyphaxMEDJBER/MazeSolver_AI" class="chip" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i>Code</a>
+              </div>
+            </article>
+
+            <article class="Project-card reveal">
+              <h3>Apprentissage par renforcement</h3>
+              <img src="images/project-rl-generated.png" alt="Illustration du projet IA par renforcement">
+              <p>Agents Python entraînés par Q-learning sur Gymnasium pour résoudre FrozenLake, Taxi et CartPole avec sauvegarde des modèles et suivi des performances.</p>
+              <div class="project-tags" aria-label="Technologies utilisées">
+                <span>Python</span><span>Q-learning</span><span>Gymnasium</span><span>IA</span>
+              </div>
+              <div class="card-links">
+                <a href="https://github.com/SyphaxMEDJBER/ia" class="chip" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i>Code</a>
+              </div>
+            </article>
+
+            <article class="Project-card reveal">
+              <h3>Clustering de données</h3>
+              <img src="images/clustering.png" alt="Illustration du projet clustering de données">
+              <p>Regroupement automatique de données avec embeddings, préparation des données et algorithmes de clustering.</p>
+              <div class="project-tags" aria-label="Technologies utilisées">
+                <span>Python</span><span>Sentence Transformers</span><span>Pandas</span><span>Scikit-learn</span><span>IA</span>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="project-category reveal">
+          <h2>Réseaux et systèmes</h2>
+          <div class="proj">
+            <article class="Project-card reveal featured">
+              <h3>Monitoring System</h3>
+              <img src="images/project-monitoring-generated.png" alt="Illustration du projet Monitoring System">
+              <p>Outil de supervision Python/Linux avec collecte de métriques, alertes et interface web.</p>
+              <div class="project-tags" aria-label="Technologies utilisées">
+                <span>Python</span><span>Linux</span><span>Monitoring</span>
+              </div>
+              <div class="card-links">
+                <a href="https://github.com/SyphaxMEDJBER/MonitoringSystem" class="chip" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i>Code</a>
+              </div>
+            </article>
+
+            <article class="Project-card reveal featured">
+              <h3>Token Ring dynamique</h3>
+              <img src="images/project-token-ring-generated.png" alt="Illustration du projet Token Ring dynamique">
+              <p>Simulation C d'un réseau Token Ring dynamique avec sockets, jeton, broadcast, reprise et tolérance aux pannes.</p>
+              <div class="project-tags" aria-label="Technologies utilisées">
+                <span>C</span><span>Sockets</span><span>Réseaux</span>
+              </div>
+              <div class="card-links">
+                <a href="https://github.com/SyphaxMEDJBER/simulation-anneau-token-ring-dynamique" class="chip" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i>Code</a>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="project-category reveal">
+          <h2>Autre</h2>
           <div class="proj">
             <article class="Project-card reveal featured">
               <h3>CeriCar</h3>
@@ -201,7 +280,7 @@
               </div>
             </article>
 
-            <article class="Project-card reveal">
+<article class="Project-card reveal">
               <h3>Portfolio statique</h3>
               <img src="images/project-portfolio-generated.png" alt="Illustration du portfolio statique">
               <p>Site statique HTML/CSS/JavaScript déployé sur Netlify avec mise à jour automatique depuis GitHub.</p>
@@ -210,83 +289,6 @@
               </div>
               <div class="card-links">
                 <a href="https://github.com/SyphaxMEDJBER/PortFolio" class="chip" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i>Code</a>
-              </div>
-            </article>
-          </div>
-
-        </div>
-
-        <div class="project-category reveal">
-          <h2>IA</h2>
-          <div class="proj">
-            <article class="Project-card reveal stage-highlight">
-              <h3>Stage IA - Apprentissage fédéré</h3>
-              <img src="images/clustering.png" alt="Illustration du stage IA en apprentissage fédéré">
-              <p>Stage à venir au Laboratoire Informatique d'Avignon autour du traitement de logs, du scripting et de l'automatisation pour une plateforme d'apprentissage fédéré.</p>
-              <div class="project-tags" aria-label="Compétences acquises pendant le stage">
-                <span>Stage à venir</span><span>Python</span><span>Automatisation</span><span>APIs</span><span>Systèmes distribués</span><span>Apprentissage fédéré</span>
-              </div>
-            </article>
-
-            <article class="Project-card reveal">
-              <h3>Maze Solver AI</h3>
-              <img src="images/project-maze-generated.png" alt="Illustration du projet Maze Solver AI">
-              <p>Programme Python qui résout des labyrinthes texte avec DFS, BFS et A*, puis génère une visualisation du chemin et des cases explorées.</p>
-              <div class="project-tags" aria-label="Technologies utilisées">
-                <span>Python</span><span>DFS</span><span>BFS</span><span>A*</span>
-              </div>
-              <div class="card-links">
-                <a href="https://github.com/SyphaxMEDJBER/MazeSolver_AI" class="chip" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i>Code</a>
-              </div>
-            </article>
-
-            <article class="Project-card reveal">
-              <h3>Apprentissage par renforcement</h3>
-              <img src="images/project-rl-generated.png" alt="Illustration du projet IA par renforcement">
-              <p>Agents Python entraînés par Q-learning sur Gymnasium pour résoudre FrozenLake, Taxi et CartPole avec sauvegarde des modèles et suivi des performances.</p>
-              <div class="project-tags" aria-label="Technologies utilisées">
-                <span>Python</span><span>Q-learning</span><span>Gymnasium</span><span>IA</span>
-              </div>
-              <div class="card-links">
-                <a href="https://github.com/SyphaxMEDJBER/ia" class="chip" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i>Code</a>
-              </div>
-            </article>
-
-            <article class="Project-card reveal">
-              <h3>Clustering de données</h3>
-              <img src="images/clustering.png" alt="Illustration du projet clustering de données">
-              <p>Regroupement automatique de données avec embeddings, préparation des données et algorithmes de clustering.</p>
-              <div class="project-tags" aria-label="Technologies utilisées">
-                <span>En cours</span><span>Python</span><span>Sentence Transformers</span><span>Pandas</span><span>Scikit-learn</span><span>IA</span>
-              </div>
-            </article>
-          </div>
-        </div>
-
-        <div class="project-category reveal">
-          <h2>Réseaux et systèmes</h2>
-          <div class="proj">
-            <article class="Project-card reveal featured">
-              <h3>Monitoring System</h3>
-              <img src="images/project-monitoring-generated.png" alt="Illustration du projet Monitoring System">
-              <p>Outil de supervision Python/Linux avec collecte de métriques, alertes et interface web.</p>
-              <div class="project-tags" aria-label="Technologies utilisées">
-                <span>Python</span><span>Linux</span><span>Monitoring</span>
-              </div>
-              <div class="card-links">
-                <a href="https://github.com/SyphaxMEDJBER/MonitoringSystem" class="chip" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i>Code</a>
-              </div>
-            </article>
-
-            <article class="Project-card reveal featured">
-              <h3>Token Ring dynamique</h3>
-              <img src="images/project-token-ring-generated.png" alt="Illustration du projet Token Ring dynamique">
-              <p>Simulation C d'un réseau Token Ring dynamique avec sockets, jeton, broadcast, reprise et tolérance aux pannes.</p>
-              <div class="project-tags" aria-label="Technologies utilisées">
-                <span>C</span><span>Sockets</span><span>Réseaux</span>
-              </div>
-              <div class="card-links">
-                <a href="https://github.com/SyphaxMEDJBER/simulation-anneau-token-ring-dynamique" class="chip" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i>Code</a>
               </div>
             </article>
           </div>
@@ -346,6 +348,7 @@
           <div class="skill-group reveal">
             <h3>Méthodes de gestion de projet</h3>
             <ul class="method-list">
+              <li><i class="fa-solid fa-sitemap" aria-hidden="true"></i><span>UML</span></li>
               <li><i class="fa-solid fa-diagram-project" aria-hidden="true"></i><span>Méthode en cascade</span></li>
               <li><i class="fa-solid fa-rotate" aria-hidden="true"></i><span>Scrum</span></li>
               <li><i class="fa-solid fa-arrows-spin" aria-hidden="true"></i><span>Méthode en spirale</span></li>

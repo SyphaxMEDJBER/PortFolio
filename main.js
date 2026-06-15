@@ -1,6 +1,7 @@
 document.documentElement.classList.add('js');
 
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const finePointer = window.matchMedia('(pointer: fine)').matches;
 
 const links = document.querySelectorAll('nav a');
 
@@ -72,6 +73,144 @@ if ('IntersectionObserver' in window) {
   }, 1400);
 } else {
   revealElements.forEach((element) => element.classList.add('is-visible'));
+}
+
+const progressBar = document.querySelector('.scroll-progress-bar');
+
+const updateScrollProgress = () => {
+  if (!progressBar) {
+    return;
+  }
+
+  const root = document.documentElement;
+  const max = root.scrollHeight - root.clientHeight;
+  const ratio = max > 0 ? root.scrollTop / max : 0;
+  progressBar.style.transform = `scaleX(${ratio})`;
+};
+
+window.addEventListener('scroll', updateScrollProgress, { passive: true });
+window.addEventListener('resize', updateScrollProgress);
+updateScrollProgress();
+
+const sectionsWithId = document.querySelectorAll('main section[id]');
+
+if ('IntersectionObserver' in window && sectionsWithId.length > 0) {
+  const navLinkById = new Map();
+
+  links.forEach((link) => {
+    const href = link.getAttribute('href');
+    if (href && href.startsWith('#')) {
+      navLinkById.set(href.slice(1), link);
+    }
+  });
+
+  const spyObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          return;
+        }
+
+        const activeLink = navLinkById.get(entry.target.id);
+        if (!activeLink) {
+          return;
+        }
+
+        navLinkById.forEach((link) => link.classList.remove('active'));
+        activeLink.classList.add('active');
+      });
+    },
+    { rootMargin: '-40% 0px -55% 0px', threshold: 0 }
+  );
+
+  sectionsWithId.forEach((section) => spyObserver.observe(section));
+}
+
+const glowCards = document.querySelectorAll('.Project-card, .objective-card, .skill-group, .contact-card, .stat');
+
+glowCards.forEach((card) => {
+  card.addEventListener('pointermove', (event) => {
+    const rect = card.getBoundingClientRect();
+    card.style.setProperty('--mx', `${event.clientX - rect.left}px`);
+    card.style.setProperty('--my', `${event.clientY - rect.top}px`);
+  });
+});
+
+if (finePointer && !prefersReducedMotion) {
+  const tiltCards = document.querySelectorAll('.Project-card, .objective-card');
+
+  tiltCards.forEach((card) => {
+    card.addEventListener('pointermove', (event) => {
+      const rect = card.getBoundingClientRect();
+      const px = (event.clientX - rect.left) / rect.width;
+      const py = (event.clientY - rect.top) / rect.height;
+      card.style.setProperty('--ry', `${((px - 0.5) * 7).toFixed(2)}deg`);
+      card.style.setProperty('--rx', `${((0.5 - py) * 7).toFixed(2)}deg`);
+    });
+
+    card.addEventListener('pointerleave', () => {
+      card.style.setProperty('--rx', '0deg');
+      card.style.setProperty('--ry', '0deg');
+    });
+  });
+
+  document.querySelectorAll('.btn').forEach((button) => {
+    button.addEventListener('pointermove', (event) => {
+      const rect = button.getBoundingClientRect();
+      const dx = event.clientX - (rect.left + rect.width / 2);
+      const dy = event.clientY - (rect.top + rect.height / 2);
+      button.style.setProperty('--magx', `${(dx * 0.18).toFixed(1)}px`);
+      button.style.setProperty('--magy', `${(dy * 0.3).toFixed(1)}px`);
+    });
+
+    button.addEventListener('pointerleave', () => {
+      button.style.setProperty('--magx', '0px');
+      button.style.setProperty('--magy', '0px');
+    });
+  });
+}
+
+const statsBlock = document.querySelector('.stats');
+
+if (statsBlock && 'IntersectionObserver' in window && !prefersReducedMotion) {
+  const animateStatNumber = (element) => {
+    const raw = (element.textContent || '').trim();
+    const match = raw.match(/^(\d+)(.*)$/);
+    if (!match) {
+      return;
+    }
+
+    const target = Number(match[1]);
+    const suffix = match[2];
+    const duration = 1200;
+    const start = performance.now();
+
+    const step = (now) => {
+      const progress = Math.min(1, (now - start) / duration);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      element.textContent = `${Math.round(target * eased)}${suffix}`;
+
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      }
+    };
+
+    window.requestAnimationFrame(step);
+  };
+
+  const statsObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.querySelectorAll('.stat-number').forEach(animateStatNumber);
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.4 }
+  );
+
+  statsObserver.observe(statsBlock);
 }
 
 const projectCategories = document.querySelectorAll('.project-category');
@@ -253,14 +392,38 @@ if (neuralCanvas instanceof HTMLCanvasElement && !prefersReducedMotion) {
     let nodes = [];
     let animationId = 0;
 
+    const pointer = { x: -9999, y: -9999 };
+    const nodeColors = [
+      'rgba(94, 234, 212,',
+      'rgba(56, 189, 248,',
+      'rgba(167, 139, 250,',
+    ];
+
+    window.addEventListener(
+      'pointermove',
+      (event) => {
+        pointer.x = event.clientX;
+        pointer.y = event.clientY;
+      },
+      { passive: true }
+    );
+
+    window.addEventListener('pointerout', (event) => {
+      if (!event.relatedTarget) {
+        pointer.x = -9999;
+        pointer.y = -9999;
+      }
+    });
+
     const buildNodes = () => {
       const count = Math.min(90, Math.max(42, Math.floor((width * height) / 24000)));
-      nodes = Array.from({ length: count }, () => ({
+      nodes = Array.from({ length: count }, (unused, nodeIndex) => ({
         x: Math.random() * width,
         y: Math.random() * height,
         vx: (Math.random() - 0.5) * 0.34,
         vy: (Math.random() - 0.5) * 0.34,
         r: Math.random() * 1.6 + 1,
+        color: nodeColors[nodeIndex % nodeColors.length],
       }));
     };
 
@@ -294,7 +457,7 @@ if (neuralCanvas instanceof HTMLCanvasElement && !prefersReducedMotion) {
 
           if (distance < 145) {
             const alpha = 0.18 * (1 - distance / 145);
-            context.strokeStyle = `rgba(143, 255, 225, ${alpha})`;
+            context.strokeStyle = `rgba(94, 234, 212, ${alpha})`;
             context.lineWidth = 1;
             context.beginPath();
             context.moveTo(node.x, node.y);
@@ -303,8 +466,25 @@ if (neuralCanvas instanceof HTMLCanvasElement && !prefersReducedMotion) {
           }
         }
 
+        const pointerDistance = Math.hypot(node.x - pointer.x, node.y - pointer.y);
+
+        if (pointerDistance < 190) {
+          const alpha = 0.34 * (1 - pointerDistance / 190);
+          context.strokeStyle = `rgba(56, 189, 248, ${alpha})`;
+          context.lineWidth = 1;
+          context.beginPath();
+          context.moveTo(node.x, node.y);
+          context.lineTo(pointer.x, pointer.y);
+          context.stroke();
+
+          node.vx += (pointer.x - node.x) * 0.00003;
+          node.vy += (pointer.y - node.y) * 0.00003;
+          node.vx = Math.max(-0.6, Math.min(0.6, node.vx));
+          node.vy = Math.max(-0.6, Math.min(0.6, node.vy));
+        }
+
         const pulse = 0.45 + Math.sin(Date.now() / 700 + indexNode) * 0.18;
-        context.fillStyle = `rgba(143, 255, 225, ${pulse})`;
+        context.fillStyle = `${node.color} ${pulse})`;
         context.beginPath();
         context.arc(node.x, node.y, node.r, 0, Math.PI * 2);
         context.fill();
